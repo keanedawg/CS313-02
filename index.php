@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <html>
 <header>
   <link rel="stylesheet" type="text/css" href="snazzy.css">
