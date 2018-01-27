@@ -27,7 +27,7 @@
 
     // With more time, validation would be a nice feature
     echo "<div class=\"checkout\"><h1>Checkout:</h1><form action=\"confirmed.php\ method=\"post\">
-        Street: <input type=\"text\" name=\"street\"> <br>
+        Street: <input required type=\"text\" name=\"street\"> <br>
         Apt #: <input type=\"text\" name=\"apt\"> <br>
         Zip: <input type=\"text\" name=\"zip\"> <br>
         State: <input type=\"text\" name=\"state\"> <br>

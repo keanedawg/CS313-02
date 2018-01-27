@@ -7,41 +7,12 @@
     include('header.php');
 ?>
 
-<h2>Confirm that you want to checkout these items?</h2>
+<h1>Thank you!</h1>
+<h2>Your order will be shipped to <?php echo $_POST['street']?>!</h2>
 
-<?php
-  if (count($_SESSION['myproducts']) == 0) {
-      echo "<p>Your cart is empty</p>";
-  }  
-  else {
-      echo "<p>You have:</p><ul>";
-      foreach ($_SESSION['myproducts'] as $value) {
-          echo "<li>$value</li>";
-      }
-      echo "</ul>";
-  }
-?>
+<?php session_destroy(); ?>
 
-<?php
-  if (count($_SESSION['myproducts']) != 0) {
-
-    // With more time, validation would be a nice feature
-    echo "<div class=\"checkout\"><h1>Checkout:</h1><form action=\"confirmed.php\ method=\"post\">
-        Street: <input type=\"text\" name=\"street\"> <br>
-        Apt #: <input type=\"text\" name=\"apt\"> <br>
-        Zip: <input type=\"text\" name=\"zip\"> <br>
-        State: <input type=\"text\" name=\"state\"> <br>
-        City: <input type=\"text\" name=\"city\"> <br>
-        <input type=\"submit\" value=\"Confirm Order\">
-    </form></div>";
-  }
-  else {
-    echo "<p>You have nothing to purchase</p>";
-  }
-?>
-
-<a href="browse.php">View Cart</a>
-<a href="browse.php">Continue Shopping</a>
+<a href="browse.php">Return to Shopping</a>
 
 <?php
    include('footer.php')
