@@ -30,6 +30,6 @@ include('header.php')
 <button>add to cart</button>
 </div>
 
-</body>
-
-</html>
+<?php
+   include('footer.php')
+?>
