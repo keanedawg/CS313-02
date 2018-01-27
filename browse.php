@@ -1,10 +1,11 @@
-<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
-<meta http-equiv="pragma" content="no-cache" />
 <?php
 // Start the session
 session_start();
-header("Refresh:5");
-include('header.php')
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Refresh: 1");
+include('header.php');
 ?>
 <h1>Useless Junk</h1>
 <a href="cart.php">See Cart</a>
@@ -13,21 +14,24 @@ include('header.php')
 <div class="product">
 <h2>Rag</h2>
 <h3>$1.50</h3>
-<form action="addToCart.php">
-add to cart
+<form action="addToCart.php" method="get">
+<input type="hidden" name="product" value="Rag"></input>
+<input type="submit" value="add to cart"></input>
 </form>
 </div>
 
 <div class="product">
 <h2>Log</h2>
 <h3>$4.50</h3>
-<button>add to cart</button>
+<input type="hidden" name="product" value="Log"></input>
+<input type="submit" value="add to cart"></input>
 </div>
 
 <div class="product">
-<h2>Burned Out Lightbulb</h2>
+<h2>Twig</h2>
 <h3>$0.50</h3>
-<button>add to cart</button>
+<input type="hidden" name="product" value="Twig"></input>
+<input type="submit" value="add to cart"></input>
 </div>
 
 <?php
