@@ -1,6 +1,10 @@
 <?php
 // Start the session
 session_start();
+header("Refresh:5");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 ?>
 <html>
 <header>
@@ -16,7 +20,7 @@ session_start();
 
 
 <div class="product">
-<h2>Rag</h2>
+<h2>Rag31</h2>
 <h3>$1.50</h3>
 <button>add to cart</button>
 </div>
