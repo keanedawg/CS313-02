@@ -1,10 +1,9 @@
+<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT"/>
+<meta http-equiv="pragma" content="no-cache" />
 <?php
 // Start the session
 session_start();
 header("Refresh:5");
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
 ?>
 <html>
 <header>
@@ -20,7 +19,7 @@ header("Pragma: no-cache");
 
 
 <div class="product">
-<h2>Rag31</h2>
+<h2>Rag20</h2>
 <h3>$1.50</h3>
 <button>add to cart</button>
 </div>
