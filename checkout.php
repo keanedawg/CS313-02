@@ -4,7 +4,6 @@
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
-    header("Refresh: 5");
     include('header.php');
 ?>
 
@@ -24,20 +23,25 @@
 ?>
 
 <?php
-  if (count($_SESSION['myproducts']) == 0) {
-      echo "<p>Your cart is empty</p>";
-  }  
+  if (count($_SESSION['myproducts']) != 0) {
+
+    // With more time, validation would be a nice feature
+    echo "<div class=\"checkout\"><h1>Checkout:</h1><form action=\"confirmed.php\ method=\"post\">
+        Street: <input type=\"text\" name=\"street\"> <br>
+        Apt #: <input type=\"text\" name=\"apt\"> <br>
+        Zip: <input type=\"text\" name=\"zip\"> <br>
+        State: <input type=\"text\" name=\"state\"> <br>
+        City: <input type=\"text\" name=\"city\"> <br>
+        <input type=\"submit\" value=\"Confirm Order\">
+    </form></div>";
+  }
   else {
-      echo "<p>You have:</p><ul>";
-      foreach ($_SESSION['myproducts'] as $value) {
-          echo "<li>$value</li>";
-      }
-      echo "</ul>";
+    echo "<p>You have nothing to purchase</p>";
   }
 ?>
 
-<a href="browse.php">Browse</a>
-<a href="checkout.php">Checkout</a>
+<a href="browse.php">View Cart</a>
+<a href="browse.php">Continue Shopping</a>
 
 <?php
    include('footer.php')
