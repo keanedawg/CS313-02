@@ -6,16 +6,16 @@ session_start();
 header("Refresh:5");
 include('header.php')
 ?>
-<?php
-  echo "hello world";
-?>
 <h1>Useless Junk</h1>
+<a href="cart.php">See Cart</a>
 
 
 <div class="product">
-<h2>Rag20</h2>
+<h2>Rag</h2>
 <h3>$1.50</h3>
-<button>add to cart</button>
+<form action="addToCart.php">
+add to cart
+</form>
 </div>
 
 <div class="product">
