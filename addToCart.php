@@ -16,4 +16,10 @@ else {
 }
 
 print_r($_SESSION['myproducts']);
+
+// Useful for debugging
+// session_destroy();
+
+header("Location: http://localhost/cs313-02/browse.php");
+die();
 ?>
