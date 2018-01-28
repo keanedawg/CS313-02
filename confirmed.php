@@ -8,9 +8,16 @@
 ?>
 
 <h1>Thank you!</h1>
-<h2>Your order will be shipped to <?php echo $_POST['street']?>!</h2>
+<h2>Your order will be shipped to <?php print_r($_POST["street"])?>!</h2>
 
-<?php session_destroy(); ?>
+<?php
+    echo "<p>You bought:</p><ul>";
+    foreach ($_SESSION['myproducts'] as $value) {
+        echo "<li>$value</li>";
+    }
+    echo "</ul>";
+session_destroy(); 
+?>
 
 <a href="browse.php">Return to Shopping</a>
 

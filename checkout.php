@@ -26,7 +26,7 @@
   if (count($_SESSION['myproducts']) != 0) {
 
     // With more time, validation would be a nice feature
-    echo "<div class=\"checkout\"><h1>Checkout:</h1><form action=\"confirmed.php\ method=\"post\">
+    echo "<div class=\"checkout\"><h1>Checkout:</h1><form action=\"confirmed.php\" method=\"post\">
         Street: <input required type=\"text\" name=\"street\"> <br>
         Apt #: <input type=\"text\" name=\"apt\"> <br>
         Zip: <input type=\"text\" name=\"zip\"> <br>
