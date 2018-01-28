@@ -7,8 +7,9 @@
     include('header.php');
 ?>
 
+<!-- Only the address is displayed. It's simpler to handle confusing formatting this way -->
 <h1>Thank you!</h1>
-<h2>Your order will be shipped to <?php print_r($_POST["street"])?>!</h2>
+<h2>Your order will be shipped to <?php echo htmlspecialchars($_POST["street"]); ?>!</h2>
 
 <?php
     echo "<p>You bought:</p><ul>";

@@ -13,32 +13,18 @@
 <a href="checkout.php">Checkout</a>
 
 
-<div class="product">
-<h2>Rag</h2>
-<h3>$1.50</h3>
-<form action="addToCart.php" method="get">
-<input type="hidden" name="product" value="Rag"></input>
-<input type="submit" value="add to cart"></input>
-</form>
-</div>
-
-<div class="product">
-<h2>Log</h2>
-<h3>$4.50</h3>
-<form action="addToCart.php" method="get">
-<input type="hidden" name="product" value="Log"></input>
-<input type="submit" value="add to cart"></input>
-</form>
-</div>
-
-<div class="product">
-<h2>Twig</h2>
-<h3>$0.50</h3>
-<form action="addToCart.php" method="get">
-<input type="hidden" name="product" value="Twig"></input>
-<input type="submit" value="add to cart"></input>
-</form>
-</div>
+<?php
+  for ($x = 0; $x < $productCount; $x++) {
+    echo '<div class="product">
+    <h2>' . ucfirst($products[$x]) . '</h2>
+    <h3> $' . number_format($prices[$x], 2) . '</h3>
+    <form action="addToCart.php" method="get">
+    <input type="hidden" name="product" value="' . $products[$x] . '"></input>
+    <input type="submit" value="add to cart"></input>
+    </form>
+    </div>';
+  }
+?>
 
 <?php
    include('footer.php')
