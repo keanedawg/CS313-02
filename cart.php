@@ -8,6 +8,8 @@
     include('header.php');
 ?>
 
+<h1>Cart</h1>
+
 <?php
   if (count($_SESSION['myproducts']) == 0) {
       echo "<p>Your cart is empty</p>";
@@ -21,6 +23,8 @@
       }
   }
 ?>
+
+
 
 <a href="browse.php">Browse</a>
 <a href="checkout.php">Checkout</a>

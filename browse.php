@@ -4,7 +4,6 @@
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
-    header("Refresh: 5");
     include('header.php');
 ?>
 <h1>Useless Junk</h1>
@@ -12,17 +11,28 @@
 <a href="cart.php">See Cart</a>
 <a href="checkout.php">Checkout</a>
 
+<br>
+<br>
+<br>
+
+<form action="browse.php" method="get">
+    Search: <input type="text" name="search" value="<?php echo $_GET["search"] ?>">
+    <input type="submit" value="Search!">
+</form>
 
 <?php
   for ($x = 0; $x < $productCount; $x++) {
-    echo '<div class="product">
-    <h2>' . ucfirst($products[$x]) . '</h2>
-    <h3> $' . number_format($prices[$x], 2) . '</h3>
-    <form action="addToCart.php" method="get">
-    <input type="hidden" name="product" value="' . $products[$x] . '"></input>
-    <input type="submit" value="add to cart"></input>
-    </form>
-    </div>';
+    $found = strpos(strtolower($products[$x]), strtolower($_GET["search"]));
+    if (!isset($_GET["search"]) || empty($_GET["search"]) || $found !== false ) {
+        echo '<div class="product">
+        <h2>' . ucfirst($products[$x]) . '</h2>
+        <h3> $' . number_format($prices[$x], 2) . '</h3>
+        <form action="addToCart.php" method="get">
+        <input type="hidden" name="product" value="' . $products[$x] . '"></input>
+        <input type="submit" value="add to cart"></input>
+        </form>
+        </div>';
+    }
   }
 ?>
 
